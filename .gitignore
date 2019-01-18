@@ -6,3 +6,4 @@ test.txt
 B_requestFile.py
 thread.txt
 log/debug.log
+log/

@@ -13,34 +13,60 @@ import re
 import json
 
 from util.logger import logger
+from util.logger import lg
 
+
+#2019-1-17 10:49:05 for循环
+
+# for i in range(10):
+    # logger.info(i)
+
+# for i in range(10,5):
+#     logger.info(i)
+
+arr = [0,1,2,3,4,5,6,7,8,9]
+
+# for i in range(len(arr)):
+i = 0
+while i < len(arr):
+    lg(arr[i])
+
+    if arr[i] % 3 == 0:
+        del(arr[i])
+    else:
+
+
+        i=i+1
+
+lg(arr)
+
+
+#2019-1-17 10:49:05 for循环
 
 #2019-1-16 10:32:10 测试loadjson
+# f = open("thread_analyzed.json")
+# j = f.read()
 
-f = open("thread_analyzed.json")
-j = f.read()
+# # logger.info(j)
 
-# logger.info(j)
+# p = json.loads(j)
 
-p = json.loads(j)
+# # logger.info(p)
 
-# logger.info(p)
+# for k1,v1 in p.items():
+#     # logger.info("k1")
+#     # logger.info(k1)
+#     # logger.info("v1")
+#     # logger.info(v1)
 
-for k1,v1 in p.items():
-    # logger.info("k1")
-    # logger.info(k1)
-    # logger.info("v1")
-    # logger.info(v1)
+#     for v2 in v1:
+#         logger.info(v2["time"])
+#         logger.info("threads")
+#         for v3 in v2["threads"]:
+#             for k4,v4 in v3.items():
+#                 logger.info("%s : %s"%(k4,v4))
 
-    for v2 in v1:
-        logger.info(v2["time"])
-        logger.info("threads")
-        for v3 in v2["threads"]:
-            for k4,v4 in v3.items():
-                logger.info("%s : %s"%(k4,v4))
-
-f.close()
-
+# f.close()
 #2019-1-16 10:32:10 测试loadjson
 
 #2019-01-15-215047 测试对象

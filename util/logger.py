@@ -52,3 +52,6 @@ config = {
 # logger = logging.getLogger(__name__)
 logging.config.dictConfig(config)
 logger = logging.getLogger("default")
+
+def lg(log):
+    logger.info(log)

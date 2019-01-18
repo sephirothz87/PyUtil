@@ -45,6 +45,7 @@ def doCompare(str1,str2):
     print(u"Levenshtein jaro距离：%s"%jaro)
 
     #越大越好，完全相同是1。出现很多次不完全相同，但结果还是1的情况
+    #如果只是数字和符号的不同，会被认为是1
     jaroWinkler = Levenshtein.jaro_winkler(str1,str2)
     print(u"Levenshtein jaro_winkler距离：%s"%jaroWinkler)
 
@@ -55,8 +56,8 @@ str1 = "thread-1"
 str2 = "thread-2"
 str3 = "hippy-1"
 str4 = "hippy-2"
-doCompare(str1,str2)
-doCompare(str1,str3)
+# doCompare(str1,str2)
+# doCompare(str1,str3)
 
 
 str5="KaraRecorder.RecordThread-1547039321216"
@@ -65,11 +66,11 @@ str7="KaraRecorder.EvaluateThread-1547039323866"
 str8="KaraM4aPlayer-PlayThread-1547039321284"
 
 
-doCompare(str5,str5)
-doCompare(str5,str1)
-doCompare(str5,str6)
-doCompare(str5,str7)
-doCompare(str5,str8)
+# doCompare(str5,str5)
+# doCompare(str5,str1)
+# doCompare(str5,str6)
+# doCompare(str5,str7)
+# doCompare(str5,str8)
 
 
 # 这里会计算一个类似于公共字符串的东西出来，以下几种情况都可能会出现
@@ -81,4 +82,20 @@ doCompare(str5,str8)
 # print(Levenshtein.setmedian([str1,str2]))
 # print(Levenshtein.setmedian([str1,str2,str3,str4]))
 # print(Levenshtein.setmedian([str1,str2,str3,str4,str5,str6,str7,str8]))
+
+
+
+# print(Levenshtein.quickmedian([str1,str2]))#thread-1
+# print(Levenshtein.quickmedian([str1,str2,str3,str4]))#hippy-1
+# print(Levenshtein.quickmedian([str1,str2,str3,str4,str5,str6,str7,str8]))#KrReodr.reaeTrad14733226
+
+
+print(Levenshtein.matching_blocks([str1,str2]))
+print(Levenshtein.matching_blocks([str1,str2,str3,str4]))
+print(Levenshtein.matching_blocks([str1,str2,str3,str4,str5,str6,str7,str8]))
+
+
+
+
+
 
