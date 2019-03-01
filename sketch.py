@@ -15,32 +15,51 @@ import json
 from util.logger import logger
 from util.logger import lg
 
+#2019-2-21 16:45:37 非空校验
+
+# d = {"a":"a","b":"b"}
+d = {"a":"a","b":"b","d":None}
+# d = {"a":"a","b":"b","d":"d"}
+print(d)
+print(d["a"])
+if not d.has_key("d"):
+    d["d"] = "e"
+if not d["d"]:
+    d["d"] = "f"
+
+print(d["d"])
+
+
+x = None
+if x != None:
+    print("not x")
+else:
+    print(x)
+
+#2019-2-21 16:45:37 非空校验
 
 #2019-1-17 10:49:05 for循环
+# # for i in range(10):
+#     # logger.info(i)
 
-# for i in range(10):
-    # logger.info(i)
+# # for i in range(10,5):
+# #     logger.info(i)
 
-# for i in range(10,5):
-#     logger.info(i)
+# arr = [0,1,2,3,4,5,6,7,8,9]
 
-arr = [0,1,2,3,4,5,6,7,8,9]
+# # for i in range(len(arr)):
+# i = 0
+# while i < len(arr):
+#     lg(arr[i])
 
-# for i in range(len(arr)):
-i = 0
-while i < len(arr):
-    lg(arr[i])
-
-    if arr[i] % 3 == 0:
-        del(arr[i])
-    else:
-
-
-        i=i+1
-
-lg(arr)
+#     if arr[i] % 3 == 0:
+#         del(arr[i])
+#     else:
 
 
+#         i=i+1
+
+# lg(arr)
 #2019-1-17 10:49:05 for循环
 
 #2019-1-16 10:32:10 测试loadjson
